@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - UNIDEL Voting System</title>
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <script src="/config.js"></script>
+  <script src="/js/utils.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/header.js"></script>
+
+  <main class="container">
+    <div class="admin-container">
+      <div class="admin-header">
+        <h1>Admin Dashboard</h1>
+        <p>Manage voting categories, contestants, and view results</p>
+      </div>
+
+      <div class="dashboard-grid">
+        <!-- Categories Card -->
+        <div class="dashboard-card card">
+          <div class="card-header">
+            <h3>Categories</h3>
+            <span class="card-icon">📋</span>
+          </div>
+          <div class="card-body">
+            <p class="card-stat" id="categoryCount">-</p>
+            <p class="card-label">Total Categories</p>
+          </div>
+          <div class="card-footer">
+            <a href="/pages/admin/categories.html" class="btn btn-primary btn-small">
+              Manage →
+            </a>
+          </div>
+        </div>
+
+        <!-- Results Card -->
+        <div class="dashboard-card card">
+          <div class="card-header">
+            <h3>Results</h3>
+            <span class="card-icon">🏆</span>
+          </div>
+          <div class="card-body">
+            <p class="card-stat" id="totalVotes">-</p>
+            <p class="card-label">Total Votes Cast</p>
+          </div>
+          <div class="card-footer">
+            <a href="/pages/admin/results.html" class="btn btn-primary btn-small">
+              View Results →
+            </a>
+          </div>
+        </div>
+
+        <!-- Audit Logs Card -->
+        <div class="dashboard-card card">
+          <div class="card-header">
+            <h3>Audit Logs</h3>
+            <span class="card-icon">📜</span>
+          </div>
+          <div class="card-body">
+            <p class="card-label">View all voting activities</p>
+          </div>
+          <div class="card-footer">
+            <a href="/pages/admin/audit-logs.html" class="btn btn-primary btn-small">
+              View Logs →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="quick-stats card">
+        <div class="card-header">
+          <h3>Quick Statistics</h3>
+        </div>
+        <div class="stats-grid" id="statsGrid">
+          <!-- Stats loaded by JS -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="/js/admin-dashboard.js"></script>
+</body>
+</html>

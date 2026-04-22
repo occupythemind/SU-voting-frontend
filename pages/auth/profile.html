@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile - UNIDEL Voting System</title>
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/profile.css">
+</head>
+<body>
+  <script src="/config.js"></script>
+  <script src="/js/utils.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/header.js"></script>
+
+  <main class="container">
+    <div class="profile-container">
+      <div class="profile-header">
+        <h1>My Profile</h1>
+      </div>
+
+      <div class="profile-card card">
+        <div id="profileContent" class="profile-content">
+          <!-- Content loaded by JS -->
+          <div class="loading">
+            <p>Loading profile...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="/js/auth-profile.js"></script>
+</body>
+</html>

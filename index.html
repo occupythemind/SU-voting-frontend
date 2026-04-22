@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNIDEL Voting System</title>
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <style>
+    .landing-hero {
+      text-align: center;
+      padding: var(--spacing-3xl) var(--spacing-lg);
+      background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-gray-light) 100%);
+      border-radius: var(--radius-xl);
+      margin: var(--spacing-2xl) 0;
+    }
+
+    .landing-hero h1 {
+      font-size: var(--font-size-4xl);
+      color: var(--color-dark);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .landing-hero p {
+      font-size: var(--font-size-lg);
+      color: var(--color-gray);
+      max-width: 600px;
+      margin: 0 auto var(--spacing-2xl) auto;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: var(--spacing-lg);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-buttons .btn {
+      padding: var(--spacing-md) var(--spacing-2xl);
+      font-size: var(--font-size-lg);
+    }
+  </style>
+</head>
+<body>
+  <script src="/config.js"></script>
+  <script src="/js/utils.js"></script>
+  <script src="/js/header.js"></script>
+
+  <main class="container">
+    <div class="landing-hero">
+      <h1>🇳🇬 UNIDEL Voting System</h1>
+      <p>Secure, transparent, and easy-to-use election platform for the UNIDEL community</p>
+      
+      <div class="hero-buttons" id="heroButtons">
+        <!-- Buttons will be loaded based on auth status -->
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const header = new Header();
+    header.mount();
+
+    // Update hero buttons based on auth status
+    const heroButtons = document.getElementById('heroButtons');
+    if (SessionManager.isLoggedIn()) {
+      const user = SessionManager.getUser();
+      if (user.is_admin) {
+        heroButtons.innerHTML = `
+          <a href="/pages/admin/dashboard.html" class="btn btn-primary">Go to Admin Dashboard</a>
+        `;
+      } else {
+        heroButtons.innerHTML = `
+          <a href="/pages/student/categories.html" class="btn btn-primary">Start Voting</a>
+        `;
+      }
+    } else {
+      heroButtons.innerHTML = `
+        <a href="/pages/auth/login.html" class="btn btn-primary">Sign In</a>
+        <a href="/pages/auth/register.html" class="btn btn-secondary">Create Account</a>
+      `;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Contestants - UNIDEL Voting System</title>
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <script src="/config.js"></script>
+  <script src="/js/utils.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/header.js"></script>
+
+  <main class="container">
+    <div class="admin-container">
+      <div class="admin-header">
+        <a href="/pages/admin/categories.html" class="back-link">← Back to Categories</a>
+        <h1 id="categoryTitle">Loading...</h1>
+      </div>
+
+      <!-- Add Contestant Form -->
+      <div id="addContestantContainer" class="form-container card" style="display: none;">
+        <div class="card-header">
+          <h3>Add Contestant</h3>
+        </div>
+        <form id="addContestantForm" class="admin-form">
+          <div class="form-group">
+            <label for="userMatric">Student Matric Number *</label>
+            <input
+              type="text"
+              id="userMatric"
+              name="userMatric"
+              placeholder="Enter matric number to search students"
+              autocomplete="off"
+            >
+            <span class="form-error" id="matric-error"></span>
+            <div id="studentResults" class="student-search-results"></div>
+          </div>
+
+          <div id="selectedStudent" class="selected-item" style="display: none;">
+            <p>Selected: <strong id="selectedName"></strong></p>
+          </div>
+
+          <div id="formError" class="form-error alert-error" style="display: none;"></div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" id="submitBtn">
+              Add Contestant
+            </button>
+            <button type="button" class="btn btn-secondary" id="cancelBtn">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="button-group">
+        <button class="btn btn-primary" id="addContestantBtn">+ Add Contestant</button>
+      </div>
+
+      <!-- Contestants List -->
+      <div id="contestantsContent" class="loading-state">
+        <div class="loading-spinner"></div>
+        <p>Loading contestants...</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="/js/admin-contestants.js"></script>
+</body>
+</html>

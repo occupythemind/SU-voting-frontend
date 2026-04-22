@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vote - UNIDEL Voting System</title>
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/voting.css">
+</head>
+<body>
+  <script src="/config.js"></script>
+  <script src="/js/utils.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/header.js"></script>
+
+  <main class="container">
+    <div class="voting-container">
+      <div class="voting-header">
+        <a href="/pages/student/categories.html" class="back-link">← Back to Categories</a>
+        <h1 id="categoryTitle">Loading...</h1>
+      </div>
+
+      <div id="votingContent" class="loading-state">
+        <div class="loading-spinner"></div>
+        <p>Loading contestants...</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="/js/student-vote.js"></script>
+</body>
+</html>

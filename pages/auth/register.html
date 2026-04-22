@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - UNIDEL Voting System</title>
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/auth.css">
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="auth-header">
+        <h1>Create Account</h1>
+        <p>Join UNIDEL voting system to participate in elections</p>
+      </div>
+
+      <form id="registerForm" class="auth-form">
+        <div class="form-group">
+          <label for="fullname">Full Name</label>
+          <input
+            type="text"
+            id="fullname"
+            name="fullname"
+            placeholder="Enter your full name"
+            required
+            autocomplete="name"
+          >
+          <span class="form-error" id="fullname-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="matric">Matric Number</label>
+          <input
+            type="text"
+            id="matric"
+            name="matric"
+            placeholder="Enter your matric number"
+            required
+            autocomplete="username"
+          >
+          <span class="form-error" id="matric-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter a password (min 6 characters)"
+            required
+            autocomplete="new-password"
+          >
+          <span class="form-error" id="password-error"></span>
+          <small class="text-muted">Password must be at least 6 characters</small>
+        </div>
+
+        <div class="form-group">
+          <label for="password-confirm">Confirm Password</label>
+          <input
+            type="password"
+            id="password-confirm"
+            name="password-confirm"
+            placeholder="Confirm your password"
+            required
+            autocomplete="new-password"
+          >
+          <span class="form-error" id="confirm-error"></span>
+        </div>
+
+        <div id="formError" class="form-error alert-error"></div>
+
+        <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+          Create Account
+        </button>
+      </form>
+
+      <div class="auth-footer">
+        <p>
+          Already have an account?
+          <a href="/pages/auth/login.html">Sign in here</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="/config.js"></script>
+  <script src="/js/utils.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/auth-register.js"></script>
+</body>
+</html>

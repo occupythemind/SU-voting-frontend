@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - UNIDEL Voting System</title>
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/auth.css">
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="auth-header">
+        <h1>Welcome Back</h1>
+        <p>Sign in to your UNIDEL voting account</p>
+      </div>
+
+      <form id="loginForm" class="auth-form">
+        <div class="form-group">
+          <label for="matric">Matric Number</label>
+          <input
+            type="text"
+            id="matric"
+            name="matric"
+            placeholder="Enter your matric number"
+            required
+            autocomplete="username"
+          >
+          <span class="form-error" id="matric-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+            autocomplete="current-password"
+          >
+          <span class="form-error" id="password-error"></span>
+        </div>
+
+        <div id="formError" class="form-error alert-error"></div>
+
+        <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+          Sign In
+        </button>
+      </form>
+
+      <div class="auth-footer">
+        <p>
+          Don't have an account?
+          <a href="/pages/auth/register.html">Create one now</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="/config.js"></script>
+  <script src="/js/utils.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/auth-login.js"></script>
+</body>
+</html>
