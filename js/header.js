@@ -21,9 +21,9 @@ class Header {
           <div class="header-content">
             <!-- Logo Section -->
             <div class="logo-section">
-              <img src="/assets/images/logo.svg" alt="UNIDEL Logo" class="logo" onerror="this.style.display='none'">
+              <img src="/assets/images/logo.svg" alt="Student Union (SU) Logo" class="logo" onerror="this.style.display='none'">
               <div class="brand-title">
-                <h1 class="brand-name">UNIDEL Voting</h1>
+                <h1 class="brand-name">Student Union (SU) Voting</h1>
                 <p class="brand-subtitle">Election System</p>
               </div>
             </div>

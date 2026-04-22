@@ -347,6 +347,60 @@
   border-bottom: none;
 }
 
+/* Bar Chart Styles */
+.section-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.bar-chart-wrapper {
+  background-color: var(--color-gray-light);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  margin-top: var(--spacing-lg);
+}
+
+.chart-info {
+  margin-bottom: var(--spacing-lg);
+}
+
+.chart-info p {
+  margin: 0;
+  color: var(--color-dark);
+}
+
+.chart-info p:last-child {
+  margin-top: var(--spacing-xs);
+}
+
+.bar-chart-svg {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  height: auto;
+}
+
+.bar-chart-svg .bar-rect {
+  transition: fill 0.2s ease, opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.bar-chart-svg .bar-rect:hover {
+  fill: var(--color-primary-dark);
+  opacity: 0.9;
+}
+
+.bar-chart-svg .bar-group {
+  pointer-events: none;
+}
+
+.bar-chart-svg .bar-rect {
+  pointer-events: auto;
+}
+
 /* Audit Logs */
 .logs-filter {
   margin-bottom: var(--spacing-lg);
