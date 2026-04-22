@@ -5,7 +5,7 @@
 
 const CONFIG = {
   // API Configuration
-  API_ORIGIN: 'http://localhost:3000',
+  API_ORIGIN: 'https://svu-api--su-voting-backend--8m67xkl48x7k.code.run',
   API_VERSION: 'v1',
   
   // Get full API URL
