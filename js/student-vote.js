@@ -140,6 +140,10 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
 
+    if (!confirm(`Are you sure you want to vote for ${contestant.full_name}?`)) {
+      return;
+    }
+
     const voteBtn = document.getElementById(`vote-btn-${contestant.contest_id}`);
     Utils.setLoading(voteBtn, true);
 
