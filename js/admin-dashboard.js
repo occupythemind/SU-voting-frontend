@@ -49,8 +49,18 @@ document.addEventListener('DOMContentLoaded', async () => {
       renderStats(categoryStats);
     } catch (error) {
       if (error.status === 401) {
-        SessionManager.logout();
-        return;
+        // Session might not be fully established yet - refresh after a delay
+        console.warn('Session not recognized, refreshing user data...');
+        try {
+          await SessionManager.refreshUser();
+          // Retry the API call after refreshing
+          await loadDashboardData();
+          return;
+        } catch (refreshError) {
+          // If refresh fails, then logout
+          SessionManager.logout();
+          return;
+        }
       }
       console.error('Failed to load dashboard data:', error);
       Utils.showNotification(error.message, 'error');

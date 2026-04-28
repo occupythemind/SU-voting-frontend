@@ -1,0 +1,21 @@
+{
+  "name": "su-voting-frontend",
+  "version": "1.0.0",
+  "description": "A clean, user-friendly voting platform built with vanilla HTML, CSS, and JavaScript. Designed for the UNIDEL student community with a focus on simplicity and accessibility.",
+  "main": "config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/occupythemind/studentUnion-voting-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/occupythemind/studentUnion-voting-frontend/issues"
+  },
+  "homepage": "https://github.com/occupythemind/studentUnion-voting-frontend#readme"
+}

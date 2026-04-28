@@ -38,8 +38,21 @@ document.addEventListener('DOMContentLoaded', async () => {
       renderContestants();
     } catch (error) {
       if (error.status === 401) {
-        SessionManager.logout();
-        return;
+        // Session might not be fully established yet - refresh after a delay
+        console.warn('Session not recognized, refreshing user data...');
+        try {
+          await SessionManager.refreshUser();
+          // Retry the API call after refreshing
+          const { data } = await api.getContestants(categoryId);
+          contestants = data.contestants || [];
+          userVote = data.user_vote;
+          renderContestants();
+          return;
+        } catch (refreshError) {
+          // If refresh fails, then logout
+          SessionManager.logout();
+          return;
+        }
       }
       renderError(error.message);
     }

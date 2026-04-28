@@ -50,6 +50,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       Utils.showNotification(`Welcome back, ${user.full_name}!`, 'success');
 
+      // Verify server session is established before redirecting
+      try {
+        await api.getMe();
+      } catch (sessionError) {
+        console.warn('Server session verification failed, but proceeding with redirect', sessionError);
+      }
+
       // Redirect based on role
       setTimeout(() => {
         if (user.is_admin) {
