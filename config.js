@@ -5,14 +5,14 @@
 
 const CONFIG = {
   // API Configuration
-  API_ORIGIN: 'https://svu-api--su-voting-backend--8m67xkl48x7k.code.run',
+  API_ORIGIN: 'http://localhost:5000',
   API_VERSION: 'v1',
-  
+
   // Get full API URL
   getApiUrl() {
     return `${this.API_ORIGIN}/api/${this.API_VERSION}`;
   },
-  
+
   getAdminApiUrl() {
     return `${this.API_ORIGIN}/api/admin`;
   },
@@ -20,7 +20,7 @@ const CONFIG = {
   // App Settings
   APP_NAME: 'UNIDEL Voting System',
   SESSION_TIMEOUT: 30 * 60 * 1000, // 30 minutes
-  
+
   // Colors (for reference in JS if needed)
   COLORS: {
     primary: '#10b981', // Green
